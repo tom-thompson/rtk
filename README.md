@@ -337,6 +337,37 @@ FAILED: 2/15 tests
 
 ### Uninstall
 
+### Uninstall
+
+## OpenCode Integration
+
+RTK also supports **OpenCode** via its plugin system. The plugin automatically rewrites commands to their rtk equivalents before execution.
+
+### Installation
+
+```bash
+# 1. Create the plugins directory
+mkdir -p ~/.config/opencode/plugins
+
+# 2. Copy the plugin from this repo
+cp .opencode/plugins/rtk.js ~/.config/opencode/plugins/
+
+# 3. Restart OpenCode
+```
+
+The plugin loads automatically from `~/.config/opencode/plugins/` on startup.
+
+### Commands Rewritten
+
+Same as Claude Code hook - see [Commands Rewritten](#commands-rewritten) section above.
+
+### Uninstall
+
+```bash
+rm ~/.config/opencode/plugins/rtk.js
+```
+
+## Uninstalling RTK
 ```bash
 rtk init -g --uninstall     # Remove hook, RTK.md, settings.json entry
 cargo uninstall rtk          # Remove binary
